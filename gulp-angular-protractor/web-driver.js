@@ -110,11 +110,18 @@ module.exports = {
             }
         }
 
+        console.log('spawn-command');
+        console.log('WEB_DRIVER_COMMAND: ' + WEB_DRIVER_COMMAND);
+        console.log('WEB_DRIVER_START_COMMAND: ' + WEB_DRIVER_START_COMMAND);
+        console.log('PROTRACTOR_DIR: ' + PROTRACTOR_DIR);
+        
         var
             callbackWasCalled = false,
             logOutput = true,
             command = childProcess.spawn(WEB_DRIVER_COMMAND, [WEB_DRIVER_START_COMMAND], { 'cwd': PROTRACTOR_DIR });
 
+        console.log('After spawn');
+        
         command.once('close', function (errorCode) {
             gutil.log(PLUGIN_NAME + ' - Webdriver standalone server will be closed');
 
