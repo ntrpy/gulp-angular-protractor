@@ -75,7 +75,7 @@ module.exports = {
      * @returns {Object}
      */
     'runProtractor': function (args) {
-        return childProcess.spawn(PROTRACTOR_COMMAND, args, {
+        return childProcess.spawn(PROTRACTOR_DIR + '/' + PROTRACTOR_COMMAND, args, {
             'stdio': 'inherit',
             'env': process.env,
             'cwd': PROTRACTOR_DIR
