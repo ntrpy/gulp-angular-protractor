@@ -18,6 +18,7 @@ var
 
     // Import required API
     url = require('url'),
+    fs = require('fs'),
     http = require('http'),
     path = require('path'),
     childProcess = require('child_process'),
@@ -114,6 +115,8 @@ module.exports = {
         console.log('WEB_DRIVER_COMMAND: ' + WEB_DRIVER_COMMAND);
         console.log('WEB_DRIVER_START_COMMAND: ' + WEB_DRIVER_START_COMMAND);
         console.log('PROTRACTOR_DIR: ' + PROTRACTOR_DIR);
+
+        fs.readdirSync(PROTRACTOR_DIR, function(err, files){ console.log('files: ', files); });
         
         var
             callbackWasCalled = false,
