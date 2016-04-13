@@ -121,7 +121,7 @@ module.exports = {
         var
             callbackWasCalled = false,
             logOutput = true,
-            command = childProcess.spawn(WEB_DRIVER_COMMAND, [WEB_DRIVER_START_COMMAND], { 'cwd': PROTRACTOR_DIR });
+            command = childProcess.spawn(PROTRACTOR_DIR + '/' + WEB_DRIVER_COMMAND, [WEB_DRIVER_START_COMMAND], { 'cwd': PROTRACTOR_DIR });
 
         command.on('error', function( err ){ console.log('Received an err! ', err); throw err });
 
